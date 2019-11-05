@@ -1,14 +1,32 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import CustomerCreate from '../views/Customer/Create.vue'
+import CustomerList from '../views/Customer/List.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
+    path: '*',
+    redirect: '/home'
+  },
+  {
+    path: '/home',
     name: 'home',
     component: Home
+  },
+  {
+    path: '/customer-create',
+    name: 'CustomerCreate',
+    component: CustomerCreate
+  },
+  {
+    path: '/customer',
+    children: [
+      { path: '/create', component: CustomerCreate },
+      { path: '/list', component: CustomerList }
+    ]
   },
   {
     path: '/about',
