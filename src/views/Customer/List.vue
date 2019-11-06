@@ -1,5 +1,5 @@
 <template>
-  <div>CustomerList</div>
+  <div>This is a template for the customer list</div>
 </template>
 <script>
 

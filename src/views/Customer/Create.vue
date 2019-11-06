@@ -1,11 +1,39 @@
 <template>
   <div>
-    <form @submit.prevent="handleCustomerCreation">
-    <div>CustomerCreate</div>
-    <label for="name"></label>
-    <input id="name" type="text">
-      <input type="submit" value="submit">
-    </form>
+
+    <v-fom
+      ref="form"
+    >
+      <v-container>
+
+        <v-col>
+          <v-text-field
+          v-model="customerType"
+          label="Customer Type"
+          >
+          </v-text-field>
+        </v-col>
+        <v-col>
+          <v-text-field
+          v-model="organization"
+          label="Organization"
+          >
+          </v-text-field>
+        </v-col>
+        <v-col>
+          <v-text-field
+          v-model="lastName"
+          label="Last Name">
+          </v-text-field>
+        </v-col>
+        <v-btn
+          color="primary"
+          @click="handleCustomerCreation"
+        >
+          Validate
+        </v-btn>
+      </v-container>
+    </v-fom>
   </div>
 </template>
 <script>

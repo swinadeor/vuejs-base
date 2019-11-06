@@ -19,14 +19,18 @@ const routes = [
   {
     path: '/customer-create',
     name: 'CustomerCreate',
-    component: CustomerCreate
+    component: CustomerCreate,
+    meta: {
+      title: 'Customer Creation'
+    }
   },
   {
-    path: '/customer',
-    children: [
-      { path: '/create', component: CustomerCreate },
-      { path: '/list', component: CustomerList }
-    ]
+    path: '/customer-list',
+    name: 'CustomerList',
+    component: CustomerList,
+    meta: {
+      title: 'Customer Creation'
+    }
   },
   {
     path: '/about',
@@ -39,6 +43,7 @@ const routes = [
 ]
 
 const router = new VueRouter({
+  mode: 'history',
   routes
 })
 
